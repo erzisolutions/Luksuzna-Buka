@@ -38,7 +38,7 @@ Studio‑grade mastering • Zero local setup • Built by **Erzi Solutions*
             └───────────────┬───────────────────┘
                             │  HTTP / WebSocket
           ┌─────────────────▼───────────────────┐
-          │        FastAPI  Backend  (api_server.py)  │
+          │  FastAPI  Backend  (api_server.py)  │
           └─────────────────┬───────────────────┘
                             │  Python calls
      ┌──────────────────────▼────────────────────────┐
@@ -56,8 +56,8 @@ Studio‑grade mastering • Zero local setup • Built by **Erzi Solutions*
                        │
               ┌────────▼────────┐
               │  Export System  │
-              │  .wav / .mp3 / .flac  │
-              └──────────────────┘
+              │  .wav / .mp3 /  │
+              └─────────────────┘
 ```
 
 ---
