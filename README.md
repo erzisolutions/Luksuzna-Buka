@@ -1,125 +1,155 @@
-# 🎧 LUKSUZNA BUKA™ — AI-Powered Audio Mastering Suite
+<!--
+SEO‑KEYWORDS: AI audio mastering, Python mastering suite, Matchering 2.0, automated audio processing, LUFS analysis, BCS transcription, Gradio frontend, FastAPI backend, Docker audio app, Erzi Solutions, Globl Contact GmbH, Luksuzna Buka, open‑source mastering, cloud mastering engine
+-->
+# 🎧 **LUKSUZNA BUKA™** — AI‑Powered Audio Mastering Suite  
+*Studio‑grade mastering • Zero local setup • Built by **Erzi Solutions** & **Globl Contact GmbH***  
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub Stars](https://img.shields.io/github/stars/erzi-ai/luksuzna-buka)](https://github.com/erzi-ai/luksuzna-buka/stargazers)
-[![CI Status](https://github.com/erzi-ai/luksuzna-buka/actions/workflows/ci.yml/badge.svg)](https://github.com/erzi-ai/luksuzna-buka/actions)
-[![Try it online](https://img.shields.io/badge/🚀_LIVE-DEMO-green)](https://luksuzna-buka.hf.space)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)  
+[![CI](https://github.com/erzi-ai/luksuzna-buka/actions/workflows/ci.yml/badge.svg)](https://github.com/erzi-ai/luksuzna-buka/actions)  
+[![Stars](https://img.shields.io/github/stars/erzi-ai/luksuzna-buka?style=social)](https://github.com/erzi-ai/luksuzna-buka/stargazers)  
+[![Live Demo](https://img.shields.io/badge/🚀_LIVE-DEMO-brightgreen)](https://luksuzna-buka.hf.space)
 
-> **LUKSUZNA BUKA™** je modularna AI platforma za audio mastering, transkripciju na BCS jezicima, analizu, upsampling i generativne efekte — spremna za studio, livestream, podcast i kvantne eksperimente.
-
----
-
-## 🚀 Ključne Značajke
-
-- 🎚️ AI Mastering Engine (EQ, kompresija, limiter, stereo M/S)
-- 🇧🇦 BCS Transkripcija + dijalekt + sentiment analiza (Whisper finetune)
-- 🧪 Workflowi: Podcast, GameAudio, Genre Morph, Quantum Mastering
-- 🧠 Generativni efekti (AudioLDM, Suno.ai, Udio)
-- 🎮 VR/AR Mix Interface + Web GUI + CLI + API
-- 🔄 Auto-update sistem i verzionisanje
-- 💡 WebRTC kolaboracija + Feedback + projekti u oblaku
-- 🪙 Blockchain metadata + ISRC tagging + Atmos
-- 🧩 Plugin podrška: CLAP, VST3, LV2, Pedalboard
+> **LUKSUZNA BUKA™** transforms *any* track—WAV, MP3, FLAC, livestream, podcast—into a fully mastered export (WAV 24‑bit, MP3 320 kbps, FLAC) with AI‑assisted QA so only **10 / 10** results ship to your audience.
 
 ---
 
-## 📁 Struktura Projekta
+## ⚡ Feature Highlights
+| 🚀 Module | 🔍 What It Does |
+|-----------|----------------|
+| **AI Mastering Core** | Matchering 2.0 + genre‑aware EQ, multiband compression, stereo enhancer, limiter |
+| **Quality Gate (QA Engine)** | LUFS, peak, dynamic range & spectral balance checks—fails tracks that don’t meet spec |
+| **Transcription & Analysis** | Multilingual STT for BCS / DE / EN + keyword extraction |
+| **Workflow Library** | Pre‑built pipelines: **Podcast**, **Livestream**, **Game Audio**, **Genre Morph**, **Stem Master** |
+| **REST API & CLI** | FastAPI server + Python CLI (`launcher.py`) for automation |
+| **Gradio / HTML GUI** | Drag‑&‑drop web interface with A↔B “Normal vs Enchanted” toggle |
+| **Docker & CI/CD** | One‑command container, GitHub Actions for lint + pytest |
+| **MKDocs Docs Site** | Full developer & user manuals ready for GitHub Pages |
 
-```bash
-LUKSUZNA_BUKA/
-├── gui.py               # Streamlit GUI
-├── api_server.py        # REST API
-├── launcher.py          # CLI meni
-├── webapp/              # Web upload & dashboard
-├── workflows/           # Mastering, podcast, gameaudio, quantum...
-├── ml/                  # AI modeli: RL, TTS, genre morph
-├── bcs_processing/      # Transkripcija, dijalekt, sentiment
-├── metadata/            # ISRC, blockchain, atmos
-├── plugins/             # CLAP/VST/LV2/Pedalboard loaderi
-├── docs/                # PDF + HTML dokumentacija
-├── visualization/       # Spectral dashboards, VR, AR
-└── .github/workflows/   # CI/CD setup (lint, test)
+---
+
+## 🏗️ System Architecture
+
+```text
+            ┌───────────────────────────────────┐
+            │          Web Frontend             │
+            │  (Gradio / Static HTML GUI)       │
+            └───────────────┬───────────────────┘
+                            │  HTTP / WebSocket
+          ┌─────────────────▼───────────────────┐
+          │        FastAPI  Backend  (api_server.py)  │
+          └─────────────────┬───────────────────┘
+                            │  Python calls
+     ┌──────────────────────▼────────────────────────┐
+     │              Core Engines                     │
+     │  • Mastering Engine  (Matchering, FX)         │
+     │  • Analyzer & QA Runner (analysis/)           │
+     │  • Transcriber  (utils/stt.py)                │
+     │  • Restoration  (restoration/)                │
+     └─────────────────┬─────────────────────────────┘
+                       │
+        ┌──────────────▼──────────────┐
+        │      Workflow Manager       │
+        │  (workflows/*.py pipelines) │
+        └──────────────┬──────────────┘
+                       │
+              ┌────────▼────────┐
+              │  Export System  │
+              │  .wav / .mp3 / .flac  │
+              └──────────────────┘
 ```
 
 ---
 
-## ⚙️ Pokretanje
+## 📦 Repository Layout
+```
+├── launcher.py               # Simple CLI launcher
+├── api_server.py             # FastAPI backend
+├── webapp/                   # Gradio & static HTML GUI
+├── workflows/                # Modular processing pipelines
+├── analysis/                 # QA engine & audio analyzers
+├── restoration/              # Noise/hiss repair modules
+├── utils/                    # Helper libs (uploader, updater)
+├── docker/                   # Dockerfile & compose
+├── docs/                     # MKDocs source
+├── tests/                    # PyTest suite
+└── mkdocs.yml                # Docs site config
+```
+
+---
+
+## ⚙️ Quick Start
 
 ```bash
-# Pokretanje GUI
-streamlit run gui.py
+# 1. Clone
+git clone https://github.com/erzi-ai/luksuzna-buka.git
+cd luksuzna-buka
 
-# REST API server
-python api_server.py
+# 2. Install deps (Python 3.10+)
+pip install -r requirements.txt
 
-# CLI meni
+# 3. Launch GUI
 python launcher.py
-
-# Web interfejs (offline)
-open webapp/web_interface.html
 ```
 
----
-
-## 🧠 Preporučeni Open-Source Alati
-
-| Alat          | Opis                                      |
-|---------------|-------------------------------------------|
-| Matchering    | Audio matching/mastering (RMS, stereo...) |
-| Spleeter      | Vokal/instrument izolacija                |
-| Librosa       | Analiza zvuka (mel, spectral...)          |
-| Demucs        | Source separation (Facebook AI)           |
-| AudioCraft    | Generativni AI od Meta                    |
-| Common Voice  | Dataset za govornu transkripciju          |
-
----
-
-## 🔄 Auto-Update Sistem
+**Docker way**
 
 ```bash
-python utils/updater.py
+docker build -t luksuzna-buka .
+docker run -p 7860:7860 luksuzna-buka
 ```
 
-✔️ Backup starih verzija  
-✔️ Preuzimanje ZIP updata  
-✔️ Overwrite verzija + restart
+Then open `http://localhost:7860` and drop your track.
 
 ---
 
-## 🌐 GitHub Pages Dokumentacija
+## 📝 Documentation
 
-🖥️ Dostupna preko:  
-📄 [`/docs/index.html`](https://yourusername.github.io/luksuzna-buka)
+* **User Guide** – `docs/` (served via MKDocs)  
+* **API Reference** – `/docs/swagger` once server is running  
+* **Workflow Blueprints** – `docs/workflows/`  
+* **CI Status** – see badge above  
 
----
-
-## 🧪 Primjeri Workflowa
-
-- `workflow_a.py`: Limiter + QA
-- `workflow_podcast.py`: Podcast mastering + transkripcija
-- `workflow_restore.py`: Denoise, upsample, dereverb
-- `workflow_genre_morph.py`: Transformacija žanra
-- `workflow_bcs_podcast.py`: BCS dijalekt + speaker labeling
-- `workflow_quantum.py`: Kvantna analiza zvuka
+Live docs site → *enable GitHub Pages from `/docs` branch*
 
 ---
 
-## 📦 Instalacija
+## 💻 Programmatic Use
 
-```bash
-pip install luksuzna-buka
+```python
+from luksuzna_buka.api_client import MasteringClient
+
+client = MasteringClient("http://localhost:8000")
+client.master_track(
+    input_path="demo.wav",
+    workflow="standard",
+    out_format="flac"
+)
 ```
 
 ---
 
-## 🛡 Licenca
+## 🤖 Roadmap 2025
 
-MIT & GPL Dual License  
-> Koristi, remixaj, forkaj – i podijeli nazad.
+- 🔗 **VST Bridge** for real‑time DAW mastering  
+- 🛰️ **Cloud Queue** for massive batch jobs  
+- 🎛️ **Dynamic Genre Morph** (EDM → Lo‑fi overnight)  
+- 🏆 **AI Mix Feedback** with chat‑style suggestions  
+
+*Open an issue or PR to be part of the build crew.* 🚀
 
 ---
 
-## 🤝 Pridruži se
+## 🤝 License
 
-📣 Prijavi bug, zatraži feature ili pošalji PR!  
-📧 Kontakt: erzi.solutions@gmail.com
+Released under a **modified MIT License** for **Erzi Solutions** & **Globl Contact GmbH** – see [LICENSE](LICENSE).
+
+---
+
+## 📞 Contact & Support
+* Email: **kontakt@globl.contat**  
+* IG: **@erzi.14**  
+* Site: **https://www.globl.contat**
+
+> **“Sound matters. Silence obeys. Luksuzna Buka™ delivers.”**  
+> *Star ⭐ the repo if this saved you hours of EQ‑tweaking!* 🎚️
+```
