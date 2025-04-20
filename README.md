@@ -5,10 +5,10 @@ SEO‑KEYWORDS: AI audio mastering, Python mastering suite, Matchering 2.0, auto
 
 Studio‑grade mastering • Zero local setup • Built by **Erzi Solutions** & **Globl Contact GmbH**
 
-[![License](https://img.shields.io/github/license/erzisolutions/Luksuzna-Buka?color=green)](LICENSE)
-[![CI](https://github.com/erzisolutions/Luksuzna-Buka/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/erzisolutions/Luksuzna-Buka/actions)
-[![GitHub stars](https://img.shields.io/github/stars/erzisolutions/Luksuzna-Buka?style=social)](https://github.com/erzisolutions/Luksuzna-Buka/stargazers)
-[![LIVE DEMO](https://img.shields.io/badge/🚀_LIVE-DEMO-brightgreen)](https://luksuzna-buka.hf.space)
+![Version](https://img.shields.io/badge/version-1.0.0-blue.svg) 
+![License](https://img.shields.io/badge/license-MIT-green.svg) 
+![Made With 💚 By ERZI](https://img.shields.io/badge/made_by-ERZI_SOLUTIONS-562b7d) 
+![JavaScript](https://img.shields.io/badge/JavaScript-ES2023-yellow) 
 
 
 > **LUKSUZNA BUKA™** transforms *any* track—WAV, MP3, FLAC, livestream, podcast—into a fully mastered export (WAV 24‑bit, MP3 320 kbps, FLAC) with AI‑assisted QA so only **10 / 10** results ship to your audience.
