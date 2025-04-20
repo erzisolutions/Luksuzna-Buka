@@ -1,0 +1,36 @@
+
+openapi: 3.0.0
+info:
+  title: OMNI-CODEX Mastering API
+  version: vSigma
+paths:
+  /status:
+    get:
+      summary: Health check
+      responses:
+        "200":
+          description: ok
+  /master:
+    post:
+      summary: Master audio
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+                workflow:
+                  type: string
+                  enum: [a,podcast,restore,livestream,genre_morph,gameaudio]
+              required: [file]
+      responses:
+        "200":
+          description: ZIP with mastered audio
+          content:
+            application/zip:
+              schema:
+                type: string
+                format: binary

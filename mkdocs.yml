@@ -1,0 +1,28 @@
+site_name: LUKSUZNA BUKA™
+site_description: AI-Powered Audio Mastering Suite
+site_author: Erzi
+repo_url: https://github.com/erzi-ai/luksuzna-buka
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.instant
+    - navigation.sections
+    - navigation.tabs
+    - toc.integrate
+    - content.code.copy
+    - content.action.edit
+nav:
+  - Početna: index.md
+  - Instalacija: install.md
+  - Pokretanje: run.md
+  - Workflowi:
+    - Mastering: workflows/mastering.md
+    - Podcast: workflows/podcast.md
+    - Quantum: workflows/quantum.md
+  - Transkripcija: transcription.md
+  - API: api.md
+  - CLI & GUI: interfaces.md
+  - Auto Update: updater.md
+  - Konfiguracija: config.md
+  - Open-source alati: tools.md

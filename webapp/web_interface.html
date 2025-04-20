@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Erzi Masterboard Web</title>
+<style>
+body{font-family:Arial;background:#121212;color:#eee;text-align:center;padding:2em;}
+.container{margin:auto;width:80%;max-width:600px;}
+input[type=file]{margin:1em 0;}
+button{padding:0.6em 1.2em;border:none;background:#3f51b5;color:#fff;border-radius:4px;cursor:pointer;}
+progress{width:100%;height:20px;}
+#result{margin-top:1em;}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>🎚️ Erzi Masterboard API</h1>
+<p>Upload track, choose workflow, get mastered ZIP.</p>
+<input type="file" id="fileInput" accept=".wav,.mp3,.flac,.ogg" />
+<select id="workflow">
+  <option value="a">Standard</option>
+  <option value="podcast">Podcast</option>
+  <option value="restore">Restore</option>
+  <option value="livestream">LiveStream</option>
+  <option value="genre_morph">Genre Morph</option>
+  <option value="gameaudio">Game Audio</option>
+</select>
+<br/>
+<button onclick="upload()">🚀 Master it!</button>
+<progress id="prog" value="0" max="100" style="display:none;"></progress>
+<div id="result"></div>
+</div>
+<script>
+function upload(){
+  const file=document.getElementById('fileInput').files[0];
+  if(!file){alert('Select a file');return;}
+  const wf=document.getElementById('workflow').value;
+  const formData=new FormData();
+  formData.append('file',file);
+  formData.append('workflow',wf);
+  const prog=document.getElementById('prog');
+  prog.style.display='block';
+  fetch('/master',{method:'POST',body:formData}).then(resp=>{
+    if(!resp.ok){throw new Error('Fail');}
+    return resp.blob();
+  }).then(blob=>{
+    const url=window.URL.createObjectURL(blob);
+    const a=document.createElement('a');
+    a.href=url;
+    a.download=file.name.replace(/\.[^.]+$/,'_master.zip');
+    a.click();
+    document.getElementById('result').innerText='✅ Finished!';
+  }).catch(err=>{
+    document.getElementById('result').innerText='❌ Error mastering';
+  }).finally(()=>{prog.style.display='none';prog.value=0;});
+}
+</script>
+</body>
+</html>

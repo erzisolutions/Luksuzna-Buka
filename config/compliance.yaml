@@ -1,0 +1,12 @@
+spotify:
+  lufs: -14
+  peak: -1.0
+youtube:
+  lufs: -13
+  peak: -1.0
+dj:
+  lufs: -9
+  peak: -0.5
+cd:
+  lufs: -9
+  peak: -0.5
