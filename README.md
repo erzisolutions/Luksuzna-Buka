@@ -121,6 +121,5 @@ MIT & GPL Dual License
 
 ## 🤝 Pridruži se
 
-👥 [Discord zajednica](https://discord.gg/link)  
 📣 Prijavi bug, zatraži feature ili pošalji PR!  
-📧 Kontakt: kontakt@luksuznabuka.ai
+📧 Kontakt: erzi.solutions@gmail.com
