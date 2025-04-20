@@ -1,13 +1,15 @@
 <!--
 SEO‑KEYWORDS: AI audio mastering, Python mastering suite, Matchering 2.0, automated audio processing, LUFS analysis, BCS transcription, Gradio frontend, FastAPI backend, Docker audio app, Erzi Solutions, Globl Contact GmbH, Luksuzna Buka, open‑source mastering, cloud mastering engine
 -->
-# 🎧 **LUKSUZNA BUKA™** — AI‑Powered Audio Mastering Suite  
-*Studio‑grade mastering • Zero local setup • Built by **Erzi Solutions** & **Globl Contact GmbH***  
+# 🎧 **LUKSUZNA BUKA™ — AI‑Powered Audio Mastering Suite**
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)  
-[![CI](https://github.com/erzi-ai/luksuzna-buka/actions/workflows/ci.yml/badge.svg)](https://github.com/erzi-ai/luksuzna-buka/actions)  
-[![Stars](https://img.shields.io/github/stars/erzi-ai/luksuzna-buka?style=social)](https://github.com/erzi-ai/luksuzna-buka/stargazers)  
-[![Live Demo](https://img.shields.io/badge/🚀_LIVE-DEMO-brightgreen)](https://luksuzna-buka.hf.space)
+Studio‑grade mastering • Zero local setup • Built by **Erzi Solutions** & **Globl Contact GmbH**
+
+[![License](https://img.shields.io/github/license/erzisolutions/Luksuzna-Buka?color=green)](LICENSE)
+[![CI](https://github.com/erzisolutions/Luksuzna-Buka/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/erzisolutions/Luksuzna-Buka/actions)
+[![GitHub stars](https://img.shields.io/github/stars/erzisolutions/Luksuzna-Buka?style=social)](https://github.com/erzisolutions/Luksuzna-Buka/stargazers)
+[![LIVE DEMO](https://img.shields.io/badge/🚀_LIVE-DEMO-brightgreen)](https://luksuzna-buka.hf.space)
+
 
 > **LUKSUZNA BUKA™** transforms *any* track—WAV, MP3, FLAC, livestream, podcast—into a fully mastered export (WAV 24‑bit, MP3 320 kbps, FLAC) with AI‑assisted QA so only **10 / 10** results ship to your audience.
 
