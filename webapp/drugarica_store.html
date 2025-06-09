@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="UTF-8">
+<title>Drugarica Pite</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body{font-family:Arial,sans-serif;background:#fafafa;margin:0;padding:2em;text-align:center;}
+  h1{color:#b34700;}
+  .pies{display:flex;flex-wrap:wrap;gap:1em;justify-content:center;margin-top:1em;}
+  .pie{background:#fff;border:1px solid #ccc;border-radius:6px;padding:1em;width:200px;box-shadow:0 2px 4px rgba(0,0,0,0.1);}
+  .pie h3{margin-top:0;color:#333;}
+  button{background:#b34700;color:#fff;border:none;padding:0.5em 1em;border-radius:4px;cursor:pointer;}
+  #cart{margin-top:2em;border-top:1px solid #ccc;padding-top:1em;}
+</style>
+</head>
+<body>
+<h1>Drugarica Pite</h1>
+<div class="pies" id="pies"></div>
+<div id="cart">
+  <h2>Korpa</h2>
+  <ul id="cartItems" style="list-style:none;padding:0;"></ul>
+  <p id="total">Ukupno: 0 RSD</p>
+  <button onclick="checkout()">Kupi</button>
+</div>
+<script>
+let cart={};
+function loadPies(){
+  fetch('/pies').then(r=>r.json()).then(data=>{
+    const cont=document.getElementById('pies');
+    data.forEach(p=>{
+      const d=document.createElement('div');
+      d.className='pie';
+      d.innerHTML=`<h3>${p.name}</h3><p>${p.price} RSD</p><button onclick="add(${p.id}, '${p.name}', ${p.price})">Dodaj</button>`;
+      cont.appendChild(d);
+    });
+  });
+}
+function add(id,name,price){
+  if(cart[id]) cart[id].qty++; else cart[id]={id,name,price,qty:1};
+  render();
+}
+function render(){
+  const list=document.getElementById('cartItems');
+  list.innerHTML='';
+  let total=0;
+  Object.values(cart).forEach(it=>{
+    const li=document.createElement('li');
+    li.textContent=`${it.name} x${it.qty} - ${it.qty*it.price} RSD`;
+    list.appendChild(li);
+    total+=it.qty*it.price;
+  });
+  document.getElementById('total').textContent=`Ukupno: ${total} RSD`;
+}
+function checkout(){
+  fetch('/checkout',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(cart)})
+    .then(r=>r.json()).then(res=>{
+      alert('Porudžbina primljena! Ukupno: '+res.total+' RSD');
+      cart={};
+      render();
+    });
+}
+loadPies();
+</script>
+</body>
+</html>
