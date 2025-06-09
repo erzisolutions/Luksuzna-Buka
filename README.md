@@ -102,6 +102,16 @@ docker run -p 7860:7860 luksuzna-buka
 
 Then open `http://localhost:7860` and drop your track.
 
+## 🍰 Drugarica Pite Store
+
+A small demo web shop for selling "drugarica" pies is included. Run it with:
+
+```bash
+python store_server.py
+```
+
+Visit `http://localhost:8080` in your browser to browse pies and place an order.
+
 ---
 
 ## 📝 Documentation
