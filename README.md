@@ -24,6 +24,7 @@ Studio‑grade mastering • Zero local setup • Built by **Erzi Solutions*
 | **Workflow Library** | Pre‑built pipelines: **Podcast**, **Livestream**, **Game Audio**, **Genre Morph**, **Stem Master** |
 | **REST API & CLI** | FastAPI server + Python CLI (`launcher.py`) for automation |
 | **Gradio / HTML GUI** | Drag‑&‑drop web interface with A↔B “Normal vs Enchanted” toggle |
+| **Advanced Prompt Builder** | Deep search & model-selection interface |
 | **Docker & CI/CD** | One‑command container, GitHub Actions for lint + pytest |
 | **MKDocs Docs Site** | Full developer & user manuals ready for GitHub Pages |
 
@@ -66,7 +67,7 @@ Studio‑grade mastering • Zero local setup • Built by **Erzi Solutions*
 ```
 ├── launcher.py               # Simple CLI launcher
 ├── api_server.py             # FastAPI backend
-├── webapp/                   # Gradio & static HTML GUI
+├── webapp/                   # Gradio & static HTML GUI + advanced prompt builder
 ├── workflows/                # Modular processing pipelines
 ├── analysis/                 # QA engine & audio analyzers
 ├── restoration/              # Noise/hiss repair modules
