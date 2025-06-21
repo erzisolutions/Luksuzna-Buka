@@ -1,0 +1,10 @@
+[
+  {
+    "name": "Business Strategy",
+    "prompt": "Draft a comprehensive business strategy for a tech startup."
+  },
+  {
+    "name": "Technical Guide",
+    "prompt": "Write a step-by-step technical guide for setting up a cloud server."
+  }
+]
