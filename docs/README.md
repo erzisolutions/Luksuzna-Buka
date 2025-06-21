@@ -7,6 +7,7 @@ OMNI-CODEX is an AI-driven audio mastering and restoration platform with modular
 ### Components
 - **api_server.py** – Flask REST API (POST /master, GET /status)
 - **webapp/web_interface.html** – simple HTML/JS frontend that uses the API
+- **webapp/logical_advocate.html** – advanced prompt builder with model search
 - **gui.py** – Streamlit desktop GUI
 - **launcher.py** – CLI menu
 - **workflows/** – individual mastering workflows
