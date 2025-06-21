@@ -20,4 +20,4 @@ python launcher.py
 
 ## Web Interfejs
 
-Otvorite lokalni fajl `webapp/web_interface.html` u pretraživaču.
+Otvorite lokalni fajl `webapp/web_interface.html` ili novu stranicu `webapp/logical_advocate.html` u pretraživaču.
